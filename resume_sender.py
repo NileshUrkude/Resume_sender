@@ -6,11 +6,11 @@ from pathlib import Path
 
 
 DEFAULT_SUBJECT = "Application for Python FullStack Developer - Immediate Joiner"
-DEFAULT_ATTACHMENT = Path(__file__).with_name("2_Fullstack resume.pdf")
-DEFAULT_SENDER = os.environ.get("RESUME_SENDER_EMAIL", "nileshburkude@gmail.com")
-SMTP_PASSWORD = os.environ.get("GMAIL_APP_PASSWORD", "")
+DEFAULT_ATTACHMENT = Path(__file__).with_name("resume.pdf")
+DEFAULT_SENDER = os.environ.get("RESUME_SENDER_EMAIL")
+SMTP_PASSWORD = os.environ.get("GMAIL_APP_PASSWORD")
 DRY_RUN = False
-DEFAULT_RECIPIENTS = os.environ.get("RESUME_RECIPIENTS", "")
+DEFAULT_RECIPIENTS = os.environ.get("RESUME_RECIPIENTS", "")    # add recipients mails here
 
 
 def parse_recipients(value):
@@ -113,57 +113,9 @@ def send_emails(sender_email, recipients, subject, body, attachment_path, passwo
       smtp.quit()
 
 # Content of the email
+# add here body of mail
 EMAIL_BODY = """
-Dear Hiring Manager,
-
-I am Nilesh Urkude, Python Developer with 2.5+ years of experience. and 1.5 years of experience in building scalable Django APIs and algorithmic trading systems. Experienced in handling financial market data, backtesting strategies, and optimizing performance-driven applications.
-
-SKILLS
-Languages & Frameworks: Python, Django REST Framework, FastAPI, JavaScript, React, Angular, HTML/CSS
-Databases: MySQL, PostgreSQL
-Tools & Other: Git/GitHub, Bootstrap/Tailwind, Prompt Engineering
-
-EXPERIENCE
-
-Python Django Developer Intern | Zappkode Solutions | Nagpur | Dec 2022 – Feb 2023
-- Built Django backend features and integrated them with Jinja-templated frontend views.
-
-Software Developer | Dhandhaniya Infotech Pvt. Ltd | Nagpur | Apr 2023 – May 2024
-- Developed and maintained Django REST APIs for managing US property records, including CRUD operations, data validation, and endpoint design.
-- Improved system reliability and performance through ongoing bug fixes and enhancements.
-
-Software Developer | VardhamanGlobal Sharecom Pvt. Ltd | Jaipur | Jul 2024 – Apr 2025
-- Developed Python-based algorithmic trading strategies for the Indian stock market (NSE) using technical indicators and OHLC/volume data for signal generation.
-- Designed and tested buy/sell strategies with risk management rules to improve strategy reliability.
-
-MQL5 Trading Developer (Freelance) | Self-employed | Remote | Jun 2025 – Dec 2025
-- Built and customized algorithmic trading strategies for the MT5 platform for Exness clients.
-- Implemented buy/sell rules, stop-loss, take-profit, trailing stop, and risk management logic.
-
-PROJECTS
-Resume Builder API: Django-based API with authentication, login/logout, and resume template storage. (github.com/NileshUrkude/Resume_Builder_site)
-Food Delivery App: Full-stack app with Django REST Framework backend and HTML/CSS/Bootstrap/JS frontend. (github.com/NileshUrkude/Food_delivery_app)
-Expense Tracker REST API: Secure API using FastAPI, SQLAlchemy, and JWT auth with filtering, pagination, and Alembic migrations. (github.com/NileshUrkude/Expense_Tracker_api)
-
-EDUCATION
-Bachelor of Engineering (CSE) — Sant Gadge Baba Amravati University, Amravati, MH
-HSC & SSC — Nagpur Divisional Board, Nagpur
-
-CERTIFICATIONS
-- Python Course from Basic to Advanced — Udemy, 06/2023
-- Diploma in Python with Data Science — Udemy, 08/2021
-- Python Complete Course — Udemy, 04/2021
-
-I am enthusiastic about the opportunity to contribute to your team and would welcome the chance to discuss how my skills align with your organization's needs further. My resume is attached for your perusal.
-
-Thank you for considering my application. I am available for an interview at your earliest convenience.
-
-Best Regards,
-
-Nilesh Urkude
-Email: nileshburkude@gmail.com
-Phone: +91 7744004366
-
+# add here body of mail
 """
 def main():
    if not SMTP_PASSWORD:
