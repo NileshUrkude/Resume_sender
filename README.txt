@@ -2,7 +2,7 @@ Resume Sender - Windows Setup
 
 Files to include in the ZIP
 - resume_sender.py
-- 2_Fullstack resume.pdf
+- resume.pdf
 - README.txt
 
 Do not include the venv or __pycache__ folders. Keep the PDF in the same
